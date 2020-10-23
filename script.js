@@ -1,39 +1,63 @@
 const APP_KEY = '0bbaff02dd8e0a92c0f7a3be267b8693';
 
+const months = [
+  "January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+];
 
 
-document.getElementById('search').addEventListener('click', function(){
-  let CITY = document.getElementById('inputValue').value
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CITY}&units=metric&appid=${APP_KEY}`)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data)
-
-    if (data.message == "city not found") {
-      alert('City not found :(');
-      return
-    } else {
-
-    let temp= data.main.temp
-    let tempFeel = data.main.feels_like
-    let location = data.name
-    let country = data.sys.country
-    let iconCode = data.weather[0].icon
-    let iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png"
-
-    document.getElementById('temp').innerHTML = temp + 'c'
-    document.getElementById('tempFeel').innerHTML = tempFeel + 'c' 
-    document.getElementById('location').innerHTML = location + ', ' + country
-    document.getElementById('icon').src = iconUrl
 
 
-    }
+window.addEventListener('load', () => {
+
+  navigator.geolocation.getCurrentPosition((position) => {
+    var LAT = position.coords.latitude;
+    var LON = position.coords.longitude;
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${LAT}&lon=${LON}&units=metric&appid=${APP_KEY}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then(data => {
+
+
+
+        let temp = data.main.temp
+        temp = temp.toFixed(1)
+
+        let location = data.name
+        let country = data.sys.country
+        let description = data.weather[0].main
+
+        let min = data.main.temp_max
+        min = min.toFixed(0)
+        let max = data.main.temp_min
+        max = max.toFixed(0)
+
+        let iconcode = data.weather[0].icon;
+        let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+
+        document.getElementById('temp').innerHTML = temp + '°'
+        document.getElementById('desc').innerHTML = description
+        document.getElementById('location').innerHTML = location + ', ' + country
+        document.getElementById('minMax').innerHTML = min + '°' + ' / ' + max + '°'
+        //document.getElementById('icon').src = iconurl 
+
+        let time = new Date()
+        
+        if (time.getHours() > 6 && time.getHours() < 9) {
+            $('#html').addClass('sunrise');
+          } else if (time.getHours() > 9 && time.getHours() < 17) {
+            $('#html').addClass('day');
+          } else if (time.getHours() > 17 && time.getHours() < 20) {
+            $('#html').addClass('sunset');
+          }
+          else {
+            $('#html').addClass('night');
+          }
+          console.log(time.getHours())
+
+        console.log(data);
+      })
   })
-  document.getElementById('inputValue').value = '';
-  });
+});
 
 
-  let i;
-  for (i = 1; i < data.length; i++) {
-    console.log(i)
-  }
