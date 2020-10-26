@@ -1,20 +1,16 @@
-window.addEventListener('load', function(){
-    fetch(`https://api.nasa.gov/planetary/apod?api_key=${APP_KEY}`)
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
-  
-      let date = data.date
-      let title = data.title
-      let explanation = data.explanation
-      let url = data.url
-  
-      document.getElementById('date').innerHTML = date
-      document.getElementById('title').innerHTML = title
-      document.getElementById('explanation').innerHTML = explanation
-      document.getElementById('url').src = url
-  
-    })
-    
-    });
-  
+let temp = data.main.temp
+temp = temp.toFixed(1)
+
+let location = data.name
+let country = data.sys.country
+let description = data.weather[0].description
+
+let min = data.main.temp_max
+min = min.toFixed(0)
+let max = data.main.temp_min
+max = max.toFixed(0)
+
+document.getElementById('temp').innerHTML = temp + '°'
+document.getElementById('desc').innerHTML = description
+document.getElementById('location').innerHTML = location + ', ' + country
+document.getElementById('minMax').innerHTML = min + '°' + ' / ' + max + '°'

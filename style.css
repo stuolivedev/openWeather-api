@@ -1,42 +1,113 @@
 .html {
   height: 100%;
   font-family: 'Raleway', sans-serif;
-  background-image: url(src/day.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;      
+  color: white;   
+  background-color: white;   
   font-size: 16px;
+}
+
+
+.body {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 411px;
+  height: 731px;
+  margin-top: 10vh;
+  background-image: url(src/night.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+@media (max-width: 600px) {
+  .body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(src/night.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .sunrise {
-  height: 100%;
-  font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 411px;
+  height: 731px;
+  margin-top: 10vh;
   background-image: url(src/sunrise.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  color: white;      
-  font-size: 16px;
+  background-size: 100%;
 }
 
-.day {
-  height: 100%;
-  font-family: 'Raleway', sans-serif;
-  background-image: url(src/day.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;      
-  font-size: 16px;
+@media (max-width: 600px) {
+  .sunrise {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(src/sunrise.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .sunset {
-  height: 100%;
-  font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 411px;
+  height: 731px;
+  margin-top: 10vh;
   background-image: url(src/sunset.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  color: white;      
-  font-size: 16px;
+  background-size: 100%;
 }
+
+@media (max-width: 600px) {
+  .sunset {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(src/sunset.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 411px;
+  height: 731px;
+  margin-top: 10vh;
+  background-image: url(src/day.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+@media (max-width: 600px) {
+  .day {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(src/day.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+
 
 .weather {
   background-image: url(src/bg16);
@@ -51,8 +122,7 @@
   grid-row-gap: 0px;
   justify-content: center;
   margin-top: 5vh;
-
-  }
+}
   
   
 
@@ -73,15 +143,30 @@
 }
 
 h1 {
-  font-size: 12vw;
+  font-size: 2.5vw;
   padding: none;
   margin: 0px;
 }
 
+@media (max-width: 600px) {
+  h1 {
+    font-size: 11vw;
+    padding: none;
+    margin: 0px;
+  }
+}
+
 h2 {
-  font-size: 4vh;
+  font-size: 3vh;
   margin: 0px;
-  margin: 2vh;
+}
+
+@media (max-width: 600px) {
+  h2 {
+    font-size: 10vw;
+    padding: none;
+    margin: 0px;
+  }
 }
 
 i {

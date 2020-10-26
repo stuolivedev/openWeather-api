@@ -44,14 +44,14 @@ window.addEventListener('load', () => {
         let time = new Date()
         
         if (time.getHours() > 6 && time.getHours() < 9) {
-            $('#html').addClass('sunrise');
+            $('#body').addClass('sunrise');
           } else if (time.getHours() > 9 && time.getHours() < 17) {
-            $('#html').addClass('day');
+            $('#body').addClass('day');
           } else if (time.getHours() > 17 && time.getHours() < 20) {
-            $('#html').addClass('sunset');
+            $('#body').addClass('sunset');
           }
           else {
-            $('#html').addClass('night');
+            $('#body').addClass('body');
           }
           console.log(time.getHours())
 
