@@ -4,6 +4,8 @@
   color: white;   
   background-color: white;   
   font-size: 16px;
+  background: rgb(0,224,255);
+  background: linear-gradient(297deg, rgba(0,224,255,0.5914740896358543) 13%, rgba(255,33,104,0.7231267507002801) 100%);
 }
 
 
@@ -17,6 +19,9 @@
   background-image: url(src/night.png);
   background-repeat: no-repeat;
   background-size: 100%;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 @media (max-width: 600px) {
@@ -122,6 +127,7 @@
   grid-row-gap: 0px;
   justify-content: center;
   margin-top: 5vh;
+  height: 30vh;
 }
   
   

@@ -27,9 +27,9 @@ window.addEventListener('load', () => {
         let country = data.sys.country
         let description = data.weather[0].main
 
-        let min = data.main.temp_max
+        let min = data.main.temp_min
         min = min.toFixed(0)
-        let max = data.main.temp_min
+        let max = data.main.temp_max
         max = max.toFixed(0)
 
         let iconcode = data.weather[0].icon;
