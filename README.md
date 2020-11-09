@@ -11,7 +11,6 @@
 ## Technologies
 Project is created with:
 * Javascript
-* JQuery
 * Open Weather 'Current Weather Data' API
 * Canva (online graphic design software)
 
