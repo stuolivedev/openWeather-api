@@ -6,7 +6,7 @@
 
 ## General info
 * This single page application makes use of the Open Weather 'Current Weather Data' api and javascripts' 'navigator.geolocation.getCurrentPosition' function to pull the viewers current location and displays the current weather data as well as the days min and max tempreatures.
-* I have created 4 custom graphic backgrounds that utilise 'time.gethours' to pull the users current time and return a background which matches the time of day.
+* I have created 4 custom graphic backgrounds that utilise 'time.gethours' to pull the users current time and JQuery applys the relevant class to the background which1 matches the time of day.
 
 ## Technologies
 Project is created with:
